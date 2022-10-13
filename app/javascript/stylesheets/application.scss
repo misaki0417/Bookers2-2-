@@ -1,0 +1,20 @@
+@import '~bootstrap/scss/bootstrap';
+
+@import '~@fortawesome/fontawesome-free/scss/fontawesome';
+
+body{
+  line-height: 1.5;
+  font-weight: 400;
+}
+.nav-item, .nav-link{
+  padding:8px;
+  color:#fff;
+}
+
+ul{
+  list-style:none;
+}
+
+.btn-block{
+  margin:0px 15px;
+}
