@@ -1,0 +1,44 @@
+<div class="container pt-3">
+  <div class="col">
+    <div class="row">
+      <div class="col-md-3">
+        <h2>User info</h2>
+
+        <% if @user.image.attached? %>
+        <%= image_tag @user.image %>
+        <% else %>
+        <%= image_tag 'default-image.jpg' %>
+        <% end %>
+        <table>
+          <tr>
+            <th>name</th>
+            <th><%= @user.name %></th>
+          </tr>
+          <tr>
+            <th>introduction</th>
+            <th></th>
+          </tr>
+        </table>
+        <%= link_to 'icon','#',class:"btn btn-outline-secondary btn-block mx-auto" %>
+        <h2>New book</h2>
+        <%= form_with model: @books do |book| %>
+        <label>
+          Title</br>
+          <%= book.text_field :title %>
+        </label>
+        <label>
+          Option</br>
+          <%= book.text_area :body %>
+        </label>
+        <input class="btn btn-success btn" type="submit" value="Create Book">
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+

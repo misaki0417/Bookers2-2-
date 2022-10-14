@@ -1,9 +1,6 @@
 class BooksController < ApplicationController
   def index
-  
+    @books=Book.new
   end
-  
-  def user_params
-    params.require(:book).permit(:index,:image)
-  end
+
 end

@@ -6,7 +6,7 @@ body{
   line-height: 1.5;
   font-weight: 400;
 }
-.nav-item, .nav-link{
+.nav-item,.link{
   padding:8px;
   color:#fff;
 }
@@ -17,4 +17,10 @@ ul{
 
 .btn-block{
   margin:0px 15px;
+}
+
+th{
+  border-top:solid 1px silver;
+
+  padding:10px;
 }
