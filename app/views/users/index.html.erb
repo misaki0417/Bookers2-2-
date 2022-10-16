@@ -1,14 +1,10 @@
 <div class="container pt-3">
-  <div class="col">
+  <!--<div class="col">-->
     <div class="row">
       <div class="col-md-3">
         <h2>User info</h2>
+        <%= image_tag @user.get_image %>
 
-        <% if @user.image.attached? %>
-        <%= image_tag @user.image %>
-        <% else %>
-        <%= image_tag 'default-image.jpg' %>
-        <% end %>
         <table>
           <tr>
             <th>name</th>
@@ -30,9 +26,26 @@
           Option</br>
           <%= book.text_area :body %>
         </label>
-        <input class="btn btn-success btn" type="submit" value="Create Book">
+        <input class="btn btn-success btn-sm" type="submit" value="Create Book">
         <% end %>
       </div>
+      <div class="col-md-9">
+        <h2>Users</h2>
+        <table>
+          <tr>
+            <th>image</th>
+            <th>name</th>
+            <th></th>
+          </tr>
+          <tr>
+            <% @users.each do |users| %>
+            <td><%= users.get_image %></td>
+            <td><%= users.name %></td>
+            <td></td>
+            <% end %>
+          </tr>
+        </table>
+        </div>
     </div>
   </div>
 </div>

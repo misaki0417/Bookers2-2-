@@ -1,1 +1,24 @@
-<%= render 'users/userinfo',user:@user,books:@books %>
+<%= render 'users/userinfo',user: @user,books: Book.new %>
+<%#= image_tag "default-image.jpg" %>
+
+<div class=container>
+  <div class="row">
+    <div class="col">
+      <h3>Books</h3>
+      <table>
+        <tr>
+          <th></th>
+          <th>Title</th>
+          <th>Option</th>
+        </tr>
+        <% @book.each do |book| %>
+        <tr>
+          <td><%= image_tag book.user.get_image %></td>
+          <td><%= book.title %></td>
+          <td><%= book.body %></td>
+        </tr>
+        <% end %>
+      </table>
+    </div>
+  </div>
+</div>
