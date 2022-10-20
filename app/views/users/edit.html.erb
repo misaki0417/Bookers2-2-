@@ -1,0 +1,24 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12 col-md-8 col-lg-5 px-5 px-sm-0 mx-auto pt-3">
+      <h2>User info</h2></br>
+      <%=form_with model:@users do |user| %>
+      <label>
+        Name </br>
+        <%= user.text_field :name %>
+      </label></br>
+      <label>
+        Image </br>
+        <%= user.file_field :image, accept: "image/*" %>
+      </label></br>
+      <label>
+        Introduction </br>
+        <%= user.text_area :introduction %>
+      </label></br>
+      <input class="btn btn-sm btn-secondary", value="Updata User", type="submit">
+      <% end %>
+      
+
+    </div>
+  </dev>
+</div

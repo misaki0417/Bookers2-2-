@@ -1,1 +1,22 @@
-show
+<div class="container">
+  <div class="row">
+　　<%=render 'users/userinfo',user: @user,books: Book.new %>
+    <div class="col-md-9">
+      <h2>Book detail</h2>
+      <table>
+
+        <tr>
+          <%= image_tag @books.user.get_image %>
+        </tr>
+        <tr>
+          <%= @books.title %>
+        </tr>
+        <tr>
+          <%= @books.body %>
+        </tr>
+
+
+      </table>
+    </div>
+  </div>
+</div>

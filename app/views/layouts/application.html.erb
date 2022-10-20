@@ -21,7 +21,7 @@
       <div class="collapse navbar-collapse" id="Navbar">
       <ul class="navbar-nav ml-auto">
        <% if user_signed_in? %>
-       <li class="nav-item"><%= link_to 'Home',root_path,class:"link" %></li>
+       <li class="nav-item"><i class="fas fa-home"></i><%= link_to 'Home',root_path,class:"link" %></li>
        <li class="nav-item"><%= link_to 'Users',users_path,class:"link" %></li>
        <li class="nav-item"><%= link_to 'Books',books_path,class:"link" %></li>
        <li class="nav-item"><%= link_to 'Log out', destroy_user_session_path, method: :delete,class:"link" %></li>
@@ -45,6 +45,7 @@
         </div>
       </div>
     </div>
+   
 
   </footer>
 </html>
