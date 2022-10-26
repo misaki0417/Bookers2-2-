@@ -1,22 +1,25 @@
-<div class="container">
-  <div class="row">
-　　<%=render 'users/userinfo',user: @user,books: Book.new %>
-    <div class="col-md-9">
-      <h2>Book detail</h2>
-      <table>
-
-        <tr>
-          <%= image_tag @books.user.get_image %>
-        </tr>
-        <tr>
-          <%= @books.title %>
-        </tr>
-        <tr>
-          <%= @books.body %>
-        </tr>
-
-
-      </table>
+  <%= flash[:success] %>
+  <dev class="container">
+    <div class="row">
+      <%=render 'users/userinfo',user: @user,books: Book.new %>
+      <div class="col-md-8 offset-md-1">
+        <h2>Book detail</h2>
+        <table>
+           <tr>
+            <th><%= image_tag @books.user.get_image %></br>
+                <%= link_to @user.name, user_path(@user.id) %>
+            </th>
+            <th><%= @books.title %></th>
+            <th><%= @books.body %></th>
+            <% if @books.user == current_user %>
+            <td><%= link_to 'Edit' ,edit_book_path(@books.id) ,class:'btn btn-primary' %></td>
+            <td><%= link_to 'Destroy' ,book_path(@books.id) ,method: :delete ,class:'btn btn-danger' %></td>
+            <% end %>
+          </tr>
+        </table>
+      </div>
     </div>
-  </div>
-</div>
+  </dev>
+
+
+

@@ -9,10 +9,13 @@
           </tr>
           <tr>
             <th>introduction</th>
-            <th></th>
+            <th><%= user.introduction %></th>
           </tr>
         </table>
-        <%= link_to 'icon','#',class:"btn btn-outline-secondary btn-block mx-auto" %>
+
+        <%= link_to edit_user_path(@user.id),class:"btn btn-outline-secondary btn-block mx-auto" do %>
+          <i class="fas fa-user-cog"></i>
+        <% end %>  
         <h2>New book</h2>
         <%= form_with model: books do |book| %>
         <label>
@@ -26,7 +29,7 @@
         <input class="btn btn-success" type="submit" value="Create Book">
         <% end %>
       </div>
-    
+
 
 
 

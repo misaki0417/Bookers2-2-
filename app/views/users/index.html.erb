@@ -12,10 +12,14 @@
           </tr>
           <tr>
             <th>introduction</th>
-            <th></th>
+            <th><%= @user.introduction %></th>
           </tr>
         </table>
-        <%= link_to 'icon',edit_user_path(@user.id),class:"btn btn-outline-secondary btn-block mx-auto" %>
+
+         <%= link_to edit_user_path(@user.id),class:"btn btn-outline-secondary btn-block mx-auto" do %>
+          <i class="fas fa-user-cog"></i>
+         <% end %>
+
         <h2>New book</h2>
         <%= form_with model: @books do |book| %>
         <label>
@@ -29,7 +33,7 @@
         <input class="btn btn-success btn-sm" type="submit" value="Create Book">
         <% end %>
       </div>
-      <div class="col-md-9">
+      <div class="col-md-8 offset-md-1">
         <h2>Users</h2>
         <table>
           <tr>
@@ -42,7 +46,7 @@
 
             <td><%= image_tag users.get_image %></td>
             <td><%= users.name %></td>
-            <td><%= link_to 'show',user_path(users.id) %></td>
+            <td><%= link_to 'Show',user_path(users.id) %></td>
 
           </tr>
           <% end %>
